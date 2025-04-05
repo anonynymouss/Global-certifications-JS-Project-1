@@ -1,0 +1,2 @@
+# Global-certifications-JS-Project-1
+THIS REPO HAS FILES FOR MY CODES WHICH I MADE FOR JS PROJECT 
