@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SecurePass Pro</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="favicon.ico" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+  <div class="background"></div>
+  <div class="emoji-bg"></div>
+
+  <main class="container">
+    <form class="security-card" onsubmit="return false;">
+      <header class="header">
+        <h1 class="title">🔒 Password Guardian</h1>
+        <div class="emoji-display" id="strengthEmoji">🛡️</div>
+      </header>
+
+      <div class="input-group">
+        <div class="input-wrapper">
+          <input
+            type="password"
+            id="passwordInput"
+            class="password-field"
+            placeholder="Enter password..."
+            autocomplete="off"
+          />
+          <button class="generate-btn" type="button" onclick="generatePassword()" aria-label="Generate password">
+            <i class="fas fa-redo"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="strength-indicator">
+        <div class="strength-meter">
+          <div class="meter-bar" id="meterBar"></div>
+        </div>
+        <div class="strength-labels">
+          <span>Weak</span>
+          <span>Strong</span>
+        </div>
+      </div>
+
+      <section class="security-stats">
+        <div class="stat-box">
+          <span class="stat-label">Security Score</span>
+          <span class="stat-value" id="scoreValue">0%</span>
+        </div>
+        <div class="stat-box">
+          <span class="stat-label">Time to Crack</span>
+          <span class="stat-value" id="crackTime">Instant</span>
+        </div>
+      </section>
+
+      <section class="suggestions-box" id="suggestionsBox"></section>
+
+      <div class="security-alert" id="securityAlert">
+        <i class="fas fa-exclamation-triangle"></i>
+        <span>Warning: Password found in data breaches!</span>
+      </div>
+    </form>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
